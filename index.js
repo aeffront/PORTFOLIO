@@ -201,7 +201,7 @@ class Project{
 let project_meshes=[];
 let names = ["Graphic Dialect","Particle System X Mediapie","See You"]
 let links = ["https://aeffront.github.io/GRAPHIC-DIALECT/","https://aeffront.github.io/particle_system/","https://aeffront.github.io/see_you/"]
-let textures = ['Projects/graphic_dialect.png','Projects/particle_system_X_mediapipe.png',"see_you.png"]
+let textures = ['Projects/graphic_dialect.png','Projects/particle_system_X_mediapipe.png',"Projects/see_you.png"]
 let descriptions = ["A javascript based  script that generates visual compositions. This script uses as base, the creation of paths, simulating written letters that are afterwards organised in rows ,lines and blocks.","A javascript based  script that utilizes Mediapipe's hand-pose machine learning recognition model to give the user contrôle over a particle system.","A javascript based  script that utilizes Mediapipe's hand-pose machine learning recognition model to map facial features onto a 3D sculpture."]
 
 
