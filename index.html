@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            selector { cursor: none; }
+            @font-face {
+                font-family: StretchPro;
+                src: url('StretchPro.otf');
+            }
+            body {
+                cursor: url('Projects/graphic_dialect.png');
+            }
+            #map{
+                position: fixed;
+                bottom:1vw;
+                left: 1vw;
+                z-index: 1;
+                
+                border: 1px solid black;
+                display: none;
+                transition: width 0.5s;
+                width: 10vw;
+                
+            }
+            #map:hover{
+                width: 30vw;
+                
+                
+            }
+            
+            #Canvas3D{
+                position: fixed;
+                z-index: 0;
+                top: 0vh;
+                filter: blur(10px);
+            }
+            #intro{
+                font-family: Arial, Helvetica, sans-serif;
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                z-index: 2;
+                text-align: center;
+                font-size: 3vh;
+                
+                top: 20vh;
+
+            }
+            
+            
+            
+            #menu{
+                position: fixed;
+                display: none;
+                z-index: 3;
+                width:30vw;
+                right: 30vw;
+                bottom: 2vh;
+                flex-direction: row;
+                gap:1vw;
+                overflow: scroll;
+            }
+            .link{
+                width: max-content;
+                padding: 1vw;
+                background-color: rgba(255, 255, 255, 0.647);
+                border-radius: 10vw;
+                list-style: none;
+                border: 1px solid black;
+                
+                
+            }
+            .link-text{
+                color: black;
+                text-decoration: none; 
+            }
+            #projects_title{
+                font-family: Arial, Helvetica, sans-serif;
+                position: fixed;
+                width: 100vw;
+                height: 1vh;
+                z-index: 2;
+                font-size: 2vh;
+                left: 30vw;
+                bottom: 10vh;
+                display: none;
+            }
+            #project_description{
+                z-index: 3;
+                position: absolute;
+                left: 1vw;
+                top: 1vw;
+                width: 30vw;
+                height: fit-content;
+                background-color: rgba(255, 255, 255, 0.647);
+                border: 1px solid black;
+                display: none;
+                padding: 1vw;
+
+                
+            }
+            #laptop{
+                display: block;
+            }
+            #phone{
+                display: none;
+            }
+            #movement_controls{
+                position: absolute;
+                z-index: 3;
+                background-color: rgba(255, 255, 255, 0.647);
+            }
+            #background{
+                position: absolute;
+                width: 100vw;
+                overflow: hidden;
+                z-index: 0;
+                object-fit: fill;
+            }
+            
+        </style>
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.module.js",
+                    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.153.0/examples/jsm/"
+                }
+            }
+        </script>
+
+    </head>
+
+    
+    <body >
+       
+            <h1 id="projects_title">ALL PROJECTS</h1>
+            <div id="menu">
+                <li class="link"><a class="link-text" href="https://aeffront.github.io/GRAPHIC-DIALECT/" target="_blank">Graphic Dialect</a></li>
+                <li class="link"><a class="link-text" href="https://aeffront.github.io/particle_system/" target="_blank">Particle System</a></li>
+
+            </div>
+            <video id="background"  autoplay muted loop>
+                <source src="background.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+       
+        <canvas id="Canvas3D"></canvas>
+        <canvas id="map"></canvas>
+        <div id="project_description">
+            <h1 id="project_name">Project Name</h1>
+            <p id="project_description_text"></p>
+        </div>
+        <div id="intro">
+            <h1>WELCOME TO MY PORTFOLIO !!</h1>
+            <p>
+             <br><br>
+            Use the arrow keys to move and look arround.<br>
+            Use the map to locate various projects.<br><br>
+            Once you find a project, click to open it in a new tab.
+        </p>
+        </div>
+       
+        <script src="map.js"></script>
+        <script  src="perlin.js"></script>
+        <script type="module" src="index.js"></script>
+    </body>
+    <script>
+       console.log( window.innerWidth);
+        if(window.innerWidth<1000){
+            document.getElementById('phone').style.display='block';
+            document.getElementById('laptop').style.display='none';
+
+        }
+        else if(window.innerWidth>1000){
+            document.getElementById('phone').style.display='none';
+            document.getElementById('laptop').style.display='block';
+
+        }
+    </script>
+</html>
