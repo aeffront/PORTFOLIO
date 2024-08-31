@@ -123,8 +123,8 @@ if (intersects.length > 0) {
 }
 
 class Project{
-    constructor(name,link,texturePath,description){
-        
+    constructor(name,link,texturePath,description,image){
+        this.image=image;
         this.name = name;
         this.description=description
         this.link=link;
@@ -203,15 +203,16 @@ let names = ["Graphic Dialect","Particle System X Mediapie","See You"]
 let links = ["https://aeffront.github.io/GRAPHIC-DIALECT/","https://aeffront.github.io/particle_system/","https://aeffront.github.io/see_you/"]
 let textures = ['Projects/graphic_dialect.png','Projects/particle_system_X_mediapipe.png',"Projects/see_you.png"]
 let descriptions = ["A javascript based  script that generates visual compositions. This script uses as base, the creation of paths, simulating written letters that are afterwards organised in rows ,lines and blocks.","A javascript based  script that utilizes Mediapipe's hand-pose machine learning recognition model to give the user contrôle over a particle system.","A javascript based  script that utilizes Mediapipe's hand-pose machine learning recognition model to map facial features onto a 3D sculpture."]
-
+let images = ['Projects/images/graphic_dialect.png','Projects/images/particle_system.png','Projects/images/see_you.png']
 
 for (let i=0;i<3;i++){
     let name = names[i];
     let link = links[i]
     let texture = textures[i];
     let description = descriptions[i]
+    let image = images[i];
     
-    let myCube = new Project(name,link,texture,description)
+    let myCube = new Project(name,link,texture,description,image)
 
     projects.push(myCube);
     //console.log(myCube.mesh)
@@ -252,6 +253,7 @@ function onPointerMove(event) {
         console.log(projects[index].name);
         document.getElementById("project_name").innerHTML= projects[index].name;
         document.getElementById("project_description_text").innerHTML=projects[index].description;
+        document.getElementById("project_image").src=projects[index].image;
 
        
        
