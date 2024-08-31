@@ -20,7 +20,7 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 //scene.background = new THREE.Color('rgba(0,0,0,0)');
-scene.background=null;
+scene.background=new THREE.Color('white');
 //const controls = new OrbitControls( camera, renderer.domElement );
 
 scene.fog = new THREE.Fog( new THREE.Color('rgba(255,255,255,0)'), 1, 150 );
