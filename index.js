@@ -123,8 +123,8 @@ if (intersects.length > 0) {
 }
 
 class Project{
-    constructor(name,link,texturePath,description,model){
-        this.model=model;
+    constructor(name,link,texturePath,description){
+        
         this.name = name;
         this.description=description
         this.link=link;
@@ -199,19 +199,19 @@ class Project{
 }
 
 let project_meshes=[];
-let names = ["Graphic Dialect","Particle System X Mediapie"]
-let links = ["https://aeffront.github.io/GRAPHIC-DIALECT/","https://aeffront.github.io/particle_system/"]
-let textures = ['Projects/graphic_dialect.png','Projects/particle_system_X_mediapipe.png']
-let descriptions = ["A javascript based  script that generates visual compositions. This script uses as base, the creation of paths, simulating written letters that are afterwards organised in rows ,lines and blocks.","A javascript based  script that utilizes Mediapipe's hand-pose machine learning recognition model to give the user contrôle over a particle system."]
-let models = ['Projects/models/2.glb','Projects/models/2.glb']
+let names = ["Graphic Dialect","Particle System X Mediapie","See You"]
+let links = ["https://aeffront.github.io/GRAPHIC-DIALECT/","https://aeffront.github.io/particle_system/","https://aeffront.github.io/see_you/"]
+let textures = ['Projects/graphic_dialect.png','Projects/particle_system_X_mediapipe.png',"see_you.png"]
+let descriptions = ["A javascript based  script that generates visual compositions. This script uses as base, the creation of paths, simulating written letters that are afterwards organised in rows ,lines and blocks.","A javascript based  script that utilizes Mediapipe's hand-pose machine learning recognition model to give the user contrôle over a particle system.","A javascript based  script that utilizes Mediapipe's hand-pose machine learning recognition model to map facial features onto a 3D sculpture."]
+
 
 for (let i=0;i<2;i++){
     let name = names[i];
     let link = links[i]
     let texture = textures[i];
     let description = descriptions[i]
-    let model = models[i];
-    let myCube = new Project(name,link,texture,description,model)
+    
+    let myCube = new Project(name,link,texture,description)
 
     projects.push(myCube);
     //console.log(myCube.mesh)
